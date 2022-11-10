@@ -3,7 +3,9 @@ int appWidth, appHeight;
 Boolean widthLarger=false, heightLarger=false;
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-PImage pic;
+float topHalfX, topHalfY, topHalfWidth, topHalfHeight;
+float bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight;
+PImage pic, pic2, pic3;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
@@ -16,10 +18,14 @@ void setup()
   appHeight = height;
   //
   //Image Dimensions for Aspect Ratio
-  //i-am-not-normal-inspirational-hand-drawn-vector-12182537.jpg
+  //Obi-wan-star-wars-jedi-23864621-800-600.jpg
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
+  int pic2Width = ; //landscape
+  int pic2Height = ; //landscape
+  int pic3Width = ; //portrait
+  intpic3Height = ; //portrait
   //
   float smallerDimension, largerDimension;
   //Image Orientation: Landscape, Portrait, Square
@@ -63,14 +69,24 @@ void setup()
   println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
   //
   //Population
-  pic = loadImage("../Images Used/i-am-not-normal-inspirational-hand-drawn-vector-12182537.jpg");
+  pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
+  topHalfX = appWidth * 1/4;
+  topHalfY = appHeight * 1/20;
+  topHalfWidth = appWidth * 1/2;
+  topHalfHeight = appHeight * 8/20;
+  bottomHalfX = appWidth *1/2;
+  bottomHalfY = appHeight * 3/4;
+  bottomHalfWidth = appWidth * 1/4;
+  bottomHalfHeight = appHeight * 4/20;
   //
   //Rectangular Layout and Image Drawing to CANVAS
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect( topHalfX, topHalfY, topHalfWidth, topHalfHeight ); //Top Half
+  rect( bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight ); //Bottom half
   //
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
@@ -82,7 +98,8 @@ void setup()
 //
 void draw()
 {
-  
+  image( pic2, topHalfX, topHalfY, topHalfWidth, topHalfHeight );
+  //image( pic3, bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight ); 
 }//End draw
 //
 void keyPressed() {
