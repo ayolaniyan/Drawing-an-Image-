@@ -20,9 +20,9 @@ void setup()
   appHeight = height;
   //
   //Population
-  pic = loadImage("../Images Used/Landscape/U-Side.jpg");
-  pic2 = loadImage("../Images Used/Landscape/istockphoto-1344641306-170667a.jpg");
-  //pic3 = loadImage("");
+  pic = loadImage("../Images Used/Landscape/071-8da4.jpg");
+  pic2 = loadImage("../Images Used/Landscape/t.jpg");
+  pic3 = loadImage("../Images Used/Portrait/th (1).jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
@@ -39,14 +39,14 @@ void setup()
   //Image Dimensions for Aspect Ratio: image meta data
   //Note: meta explored in MP3's or music files
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth1 = 800; // U-Side Landscape
+  int picWidth1 = 800; //071-8da4 Landscape
   int picHeight1 = 600;
-  int picWidth2 = 509; //istockphoto Landscape
-  int picHeight2 = 339;
-  int picWidth3 = 480; //maserati-mc20-104-1599596763 Portrait
-  int picHeight3 = 240;
+  int picWidth2 = 860; //th Landscape
+  int picHeight2 = 529;
+  int picWidth3 = 325; //th (1)Portrait
+  int picHeight3 = 485;
   //
-   //Image Orientation: Landscape, Portrait, Square
+  //Image Orientation: Landscape, Portrait, Square
   //Scaling Image size with aspect ratio requires larger dimension
   float smallerDimension1, smallerDimension2, smallerDimension3;
   float largerDimension1, largerDimension2, largerDimension3;
@@ -108,7 +108,7 @@ void setup()
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
   //image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
-image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
+  image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
   //
 }//End setup
 //
@@ -128,7 +128,7 @@ void mousePressed() {
     nightMode = false;
     rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
     tint(tintDayMode, tintDayModeOpacity); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
-image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
+    image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
     //
   }
   if (mouseButton == RIGHT) {
