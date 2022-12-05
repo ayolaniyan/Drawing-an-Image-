@@ -20,8 +20,8 @@ void setup()
   appHeight = height;
   //
   //Population
-  pic = loadImage("../Images Used/Landscape/Tommy-Shelby.jpg");
-  pic2 = loadImage("../Images Used/Landscape/Aubameyang.jpg");
+  pic = loadImage("../Images Used/Landscape/home-landscape-photography.jpg");
+  pic2 = loadImage("../Images Used/Landscape/Jack-Reacher-Opengraph-FB-US.jpg");
   pic3 = loadImage("../Images Used/Portrait/Deadpool.jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
@@ -39,9 +39,9 @@ void setup()
   //Image Dimensions for Aspect Ratio: image meta data
   //Note: meta explored in MP3's or music files
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth1 = 800; //Tommy Shelby Landscape
+  int picWidth1 = 800; //home-landscape-photography Landscape
   int picHeight1 = 600;
-  int picWidth2 = 860; //Aubameyang Landscape
+  int picWidth2 = 860; //Jack-Reacher-Opengraph-FB-US Landscape
   int picHeight2 = 529;
   int picWidth3 = 325; //Deadpool Portrait
   int picHeight3 = 485;
